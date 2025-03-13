@@ -26,7 +26,7 @@ test("Ship Sunk Function", () => {
 test("Gameboard Placement Function", () => {
     const gameboard = new modules.gameboard
 
-    gameboard.placeShip([1,7], 3)
+    gameboard.placeShip([1,7], 3, "v")
 
     expect(gameboard.board[1][7]).toEqual({
         length: 3,
@@ -38,7 +38,7 @@ test("Gameboard Placement Function", () => {
 test("Gameboard Placement Function extended values", () => {
     const gameboard = new modules.gameboard
 
-    gameboard.placeShip([1,7], 3)
+    gameboard.placeShip([1,7], 3, "v")
 
     expect(gameboard.board[2][7]).toEqual({
         length: 3,
@@ -52,10 +52,29 @@ test("Gameboard Placement Function extended values", () => {
     })
 })
 
+test("Gameboard Placement Function (horizontal)", () => {
+    const gameboard = new modules.gameboard
+
+    gameboard.placeShip([1,7], 3, "h")
+
+    expect(gameboard.board[1][8]).toEqual({
+        length: 3,
+        hits: null,
+        sunk: false
+    })
+    expect(gameboard.board[1][9]).toEqual({
+        length: 3,
+        hits: null,
+        sunk: false
+    })
+})
+
+
+
 test("Gameboard recieveAttack function (hit)", () => {
     const gameboard = new modules.gameboard
 
-    gameboard.placeShip([1,7], 3)
+    gameboard.placeShip([1,7], 3, "v")
 
     expect(gameboard.board[1][7].hits).toBe(null)
     gameboard.receiveAttack([1,7])
@@ -68,7 +87,7 @@ test("Gameboard recieveAttack function (miss)", () => {
 
     gameboard.receiveAttack([1,7])
 
-    expect(gameboard.board[1][7]).toEqual(["miss"])
+    expect(gameboard.board[1][7]).toEqual("miss")
 
 })
 
@@ -79,7 +98,7 @@ test("Gameboard allSunk function (no ships)", () => {
 
 test("Gameboard allSunk function", () => {
     const gameboard = new modules.gameboard
-    gameboard.placeShip([1,7], 3)
+    gameboard.placeShip([1,7], 3, "v")
     expect(gameboard.allSunk()).toBe(false)
     gameboard.receiveAttack([1,7])
     gameboard.receiveAttack([2,7])

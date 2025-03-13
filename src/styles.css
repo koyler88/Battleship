@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.unavailable {
+    opacity: 10%;
+    cursor: not-allowed !important;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.dragged {
+    background-color: orange !important;
+}
+
+body {
+    height: 100vh;
+    background-color: #3c6e71;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cell:hover {
+    border: 1px solid red;
+}
+
+.title {
+    text-align: center;
+    font-size: 64px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: #284b63;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.message, .arrows {
+    font-size: 20px;
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    gap: 15%;
+}
+
+.player-label, .enemy-label {
+    font-size: 30px;
+}
+
+.player-label {
+    color: antiquewhite;
+}
+
+.enemy-label {
+    color: lightcoral;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 10px;
+}
+
+.hidden {
+    opacity: 0%;
+    z-index: -100;
+}
+
+.zhide {
+    z-index: -1;
+}
+
+.unclickable {
+    pointer-events: none;
+}
+
+.reset, .start {
+    font-size: 16px;
+    width: 50px;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.gamemode {
+    background-color: antiquewhite;
+    height: 3em;
+    width: 9em;
+    box-shadow: 2px 2px 2px black;
+}
+
+.board-title {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.grid-container {
+    height: 75vh;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: center;
+}
+
+.faded {
+    filter:opacity(10%)
+}
+
+.ship-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 20vh;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.display-ship {
+    display: flex;
+}
+
+.verticle {
+    flex-direction: column;
+}
+
+.display-ship:hover {
+    border: 1px solid blue;
+}
+
+[draggable] {
+    cursor: move;
+}
+
+.grid-one, .grid-two {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+}
+
+.cell, .display-cell{
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.empty {
+    background-color: lightblue;
+    border: 1px solid black;
+}
+
+.ship {
+    background-color: gray;
+    border: 1px solid black
+}
+
+.hidden-ship {
+    border: 1px solid black;
+    background-color: lightgreen;
+}
+
+.dot {
+    background-color: black;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+}
+.empty-hit, .ship-hit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red-x {
+    color: red;
+    font-size: 35px;
+}
+
+.hit {
+    opacity: 70%;
+}
+
+
+.footer {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px dotted black;
+    
+}
+
+.github-image, .github {
+    background-color: #3c6e71;
+    border: none;
+    width: 85px;
+}
+
+.github-image:hover {
+    cursor: pointer;
+}
